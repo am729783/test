@@ -1,0 +1,13 @@
+name: your-app-name
+region: nyc  # أو أي منطقة أخرى
+services:
+- name: backend
+  github:
+    branch: main
+  dockerfile_path: Dockerfile  # أو احذف هذا السطر إذا لم تستخدم Docker
+  http_port: 8000
+  routes:
+  - path: /
+    protocol: HTTP
+  - path: /ws
+    protocol: WS  # تمكين WebSocket
